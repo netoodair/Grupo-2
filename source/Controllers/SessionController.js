@@ -14,7 +14,6 @@ module.exports = {
             return response.status(400).json({ error: 'User or Password is wrong'})
         }
         const hash =  await bcrypt.compare(password, user.password);
-        console.log(hash);
         if(!hash){
            return response.status(400).json({ error: 'User or Password is wrong'})
        }
